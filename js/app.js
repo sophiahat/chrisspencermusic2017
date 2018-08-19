@@ -76,6 +76,12 @@ myApp.config(['$routeProvider', function($routeProvider) {
         when('/learn', {
             templateUrl: 'views/learn.html'
         }).
+        when('/teaching', {
+            templateUrl: 'views/teaching.html'
+        }).
+        when('/gigs', {
+            templateUrl: 'views/gigs.html'
+        }).
         otherwise({
             redirectTo: '/home'});  
 }]);
