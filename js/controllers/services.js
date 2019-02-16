@@ -3,7 +3,7 @@ myApp.controller('ServicesController', ['$scope', function($scope) {
     var url = window.location.href;
     //update google analytics
     gtag('config', 'UA-20609405-4', {
-        'page_path' : '/#/services',
+        'page_path' : '/#!/services',
         'page_location' : url,
         'page_title' : 'Services'
     
