@@ -26,15 +26,56 @@ time, mark, audio, video {
   font: inherit;
   font-size: 100%;
   vertical-align: baseline; }
-
+/*end style reset*/
 html {
-  line-height: 1; }
+  line-height: 1.6; 
+    font-weight: 700;
+}
+
+p {
+    display: block;
+    margin-top: 10px;
+}
 
 ol, ul {
   list-style-type: disc;
   list-style-position: inside;
 }
 
+.about .container {
+    background-image: url("/images/bkgnd_people.jpg");
+    background-position: bottom;
+}
+
+.services .container {
+    background-image: url("/images/bkgnd_bio.jpg");
+}
+
+.home .container {
+    background-image: url("/images/bkgnd_home.jpg");
+}
+
+.portfolio .container {
+    background-image: url("/images/bkgnd_home-flipped.jpg");
+    background-position: bottom right;
+}
+
+.learn .container {
+    background-image: url("/images/bkgnd_contact.jpg");
+    background-position: bottom right;
+}
+
+.contact .container {
+    background-image: url("/images/bkgnd_brick.jpg");
+}
+
+.gigs .container {
+    background-image: url("/images/bkgnd_gigs.jpg");
+}
+
+.gigs .iframe-container {
+    margin-top: 200px;
+}
 audio::-internal-media-controls-download-button {
     display:none;
 }
@@ -131,17 +172,22 @@ strong {
 }
 
 .card {
-  background: white;
-  width: 100%;
-  max-width: 950px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 10px 40px;
-  position: relative;
-  opacity: .95;
-  border-radius: 4px;
-  border: 1px solid #e8e8e8;
-  box-shadow: 0 1px 0 rgba(0,0,0,.25);
+    background: white;
+    background-repeat: no-repeat;  /*to accommodate background images*/
+    -webkit-background-size: cover; /*to accommodate background images*/
+    -moz-background-size: cover; /*to accommodate background images*/
+    -o-background-size: cover; /*to accommodate background images*/
+    background-size: cover; /*to accommodate background images*/
+    width: 100%;
+    max-width: 950px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 40px;
+    position: relative;
+    opacity: .95;
+    border-radius: 4px;
+    border: 1px solid #e8e8e8;
+    box-shadow: 0 1px 0 rgba(0,0,0,.25);
 }
 
 .card-center-text {
@@ -552,8 +598,52 @@ section .ng-scope {
 #audio-player {
     margin: 15px 0 0 0;
     width: 100%;
-    clear:both;
+    clear:both;  
+}
+.people-places ul li img {
+    margin-top: 5px;
+    max-width: 120px;
+    max-height: 110px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 3px;
     
+}
+.people-places .client-image {
+/*    position: relative;*/
+    width: 150px;
+    height: 130px;
+/*    display: flex;*/
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+}
+.people-places .client-url {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+}
+.people-places ul {
+    list-style: none;
+/*    display: flex;*/
+/*    flex: 1 1 auto;*/
+/*    flex-wrap: wrap;*/
+
+}
+.people-places ul li {
+    margin: 3px;
+    background: black;
+    display: inline-block;
+    width: 155px;
+    height: 155px;
+    border: solid 1px black;
+    border-radius: 4px;
+    text-align: center;
+/*    justify-content: center;*/
+/*    align-items: center;*/
 }
 /*
 .audio-item div:nth-child(even) {
@@ -836,9 +926,8 @@ footer  {
     .images.slider p {
         top: 300px;
     }
-    .boat .boat-intro {
-        width: 95%;
-        display: block;
+    .gigs iframe {
+        margin: 0;
     }
 }
 @media (max-width: 575px) {
@@ -856,20 +945,6 @@ footer  {
 */
 }
 
-@media (max-width: 490px) {
-    .boat h3,
-    .boat p {
-        display: none;
-    }
-    div.boat {
-        margin: 10px auto;
-    }
-    .navbar-nav>li {
-        width: 100%;
-        padding: none;
-    }
-
-}
 
 @media (max-width: 450px) {
     

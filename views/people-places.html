@@ -8,12 +8,15 @@
                 <section>
                     <h2>People / Bands</h2>
                     <ul id="people-bands">
-                        <li class="clients" ng-repeat="client in clients | filter: client.type='musician'" ng-show="client.showCSMusic&&client.active"><div class="client-image"><a ng-href="{{client.url}}" target="_blank"><img ng-src="https://storage.googleapis.com/chrisspencermusic/images/clients/{{client.image}}" alt="client image"></a></div><div class="client-url"><a ng-href="{{client.url}}" target="_blank">{{client.name}}</a></div></li>
+                        <li class="clients" ng-repeat="client in clients | filter: clientFilter" ng-show="client.showCSMusic&&client.active"><div class="client-image"><a ng-href="{{client.url}}" target="_blank"><img ng-src="https://storage.googleapis.com/chrisspencercreative/images/client_images/{{client.image}}" alt="client image"></a></div><div class="client-url"><a ng-href="{{client.url}}" target="_blank">{{client.name}}</a></div></li>
                     </ul>
                        
                 </section>
                 <section>
                     <h2>Places / Venues / Events</h2>
+                    <ul id="venues">
+                        <li class="clients" ng-repeat="client in clients | filter: venueFilter" ng-show="client.showCSMusic&&client.active"><div class="client-image"><a ng-href="{{client.url}}" target="_blank"><img ng-src="https://storage.googleapis.com/chrisspencercreative/images/client_images/{{client.image}}" alt="client image"></a></div><div class="client-url"><a ng-href="{{client.url}}" target="_blank">{{client.name}}</a></div></li>
+                    </ul>
                 </section>
             </div>
         </div>

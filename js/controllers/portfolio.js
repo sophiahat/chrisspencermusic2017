@@ -2,39 +2,20 @@ myApp.controller('PortfolioController', ['$scope', '$firebaseAuth', '$firebaseAr
     
     //update google analytics
     var url = window.location.href;
-    gtag('config', 'UA-20609405-2', {
+    gtag('config', 'UA-20609405-4', {
         'page_path' : '/#/portfolio',
         'page_location' : url,
         'page_title' : 'Portfolio'
     
     });
     
-    // tab management
-    $scope.tab = 1;
-    $scope.setTab = function(newTab) {
-        $scope.tab = newTab;
-    };
-
-    $scope.isSet = function(tabNum) {
-        console.log("Tab is" +tabNum);
-        return $scope.tab === tabNum;
-    };
-    $scope.subTab = 3;
-    $scope.setSubTab = function(newSubTab) {
-        $scope.subTab = newSubTab;  
-    };
-    $scope.subIsSet = function(subTabNum) {
-        return $scope.subTab === subTabNum;
-    };
-    
-    var videosRef = firebase.database().ref('/video');
-    var videosInfo = $firebaseArray(videosRef);
-    $scope.videos = videosInfo;
-    
-    
     var audioRef = firebase.database().ref('/audio');
     var audioInfo = $firebaseArray(audioRef);
-    $scope.audio = audioInfo;
+    var guitaristAudioRef = audioRef.orderByChild("showCSMusic").equalTo(true);
+    var guitaristAudioInfo = $firebaseArray(guitaristAudioRef);
+    
+    console.log(guitaristAudioInfo);
+    $scope.audio = guitaristAudioInfo;
     console.log("Audio Object from database: "); 
     console.log($scope.audio);
     var audioplayer = $('#audio-player');
@@ -62,14 +43,14 @@ myApp.controller('PortfolioController', ['$scope', '$firebaseAuth', '$firebaseAr
 //        console.log("length of audio array: " + audioInfo.length);
 //        console.log("first Audio object");
 //        console.log(audioInfo[0].showCSCreative);
-        var audioArrayLength = audioInfo.length;
+        var audioArrayLength = guitaristAudioInfo.length;
         var trackNumber = Math.floor(Math.random() * (audioArrayLength));
         console.log("Random choice is: " + trackNumber);
         
-        var rec = audioInfo.$getRecord('audio1');
-        console.log('record 1 is:');
-        console.log(rec);
-        rec = audioInfo[trackNumber];
+//        var rec = audioInfo.$getRecord('audio1');
+//        console.log('record 1 is:');
+//        console.log(rec);
+        var rec = guitaristAudioInfo[trackNumber];
         console.log('random pick is:');
         console.log(rec);
         
@@ -83,12 +64,4 @@ myApp.controller('PortfolioController', ['$scope', '$firebaseAuth', '$firebaseAr
     
     $scope.getAudioSource = changeDisplayAudio;
                     
-    
-    $scope.getIframeSource = function(video) {
-        var link = 'https://www.youtube.com/embed/' + video.videoId + '?autoplay=1&amp;showinfo=0&amp;rel=0';
-        var videoplayer = $('#portfolio-video-player');
-        videoplayer.attr('src', link); 
-        
-        return;
-    };
 }]);//Controller

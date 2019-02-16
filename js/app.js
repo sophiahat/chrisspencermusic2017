@@ -21,8 +21,10 @@ myApp.run(['$rootScope', '$location', function($rootScope, $location) {
     });// event info
 }]);//run
 
-
-
+myApp.config(['$locationProvider', function($locationProvider) {
+    $locationProvider.hashPrefix('!');
+    $locationProvider.html5Mode(false);
+}]);
 
 
 myApp.config(['$routeProvider', function($routeProvider) {
@@ -67,6 +69,10 @@ myApp.config(['$routeProvider', function($routeProvider) {
                 
             }//resolve
         }).
+        when('/clients', {
+            templateUrl: 'views/people-places.html',
+            controller: 'ClientController'
+    }).
         when('/thanks', {
             templateUrl: 'views/thanks.html'
         }).
@@ -80,7 +86,8 @@ myApp.config(['$routeProvider', function($routeProvider) {
             templateUrl: 'views/teaching.html'
         }).
         when('/gigs', {
-            templateUrl: 'views/gigs.html'
+            templateUrl: 'views/gigs.html',
+            controller: 'GigsController'
         }).
         otherwise({
             redirectTo: '/home'});  
