@@ -80,7 +80,8 @@ myApp.config(['$routeProvider', function($routeProvider) {
             templateUrl: 'views/error.html'     
         }).
         when('/learn', {
-            templateUrl: 'views/learn.html'
+            templateUrl: 'views/learn.html',
+            controller: 'LearnController'
         }).
         when('/teaching', {
             templateUrl: 'views/teaching.html'
