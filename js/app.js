@@ -90,6 +90,9 @@ myApp.config(['$routeProvider', function($routeProvider) {
             templateUrl: 'views/gigs.html',
             controller: 'GigsController'
         }).
+        when('/major-scale-modes', {
+            templateUrl: 'views/courses/major-scale-modes.html'
+        }).
         otherwise({
             redirectTo: '/home'});  
 }]);
