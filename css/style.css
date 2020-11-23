@@ -50,6 +50,51 @@ ol, ul {
 .services .container {
     background-image: url("/images/bkgnd_bio.jpg");
 }
+.services .sync-demo {
+    margin: 10px;
+    background: rgb(231,233,235);
+    display: block;
+    clear: both;
+    border: gray 1px solid;
+    padding: 3px;
+    border-radius: 4px;
+} 
+.services #track-picker {
+    display: block;
+    width: 20%;
+    margin: 5px;
+}
+.services #track-picker button {
+    width: 100%
+}
+.services #track {
+    display: block;
+    width: 75%;
+}
+.services #player-container {
+    margin:5px;
+}
+.services #track-image {
+    margin: 5px;
+    width: calc(100% - 0px);
+    height: calc(30vw * 0.5625); /*16:9 aspect ratio*/
+/*    max-height: 190px;*/
+    min-height: 175px;
+    max-height: 200px;
+    overflow: hidden;
+}
+.services #track-image img {
+    width: inherit;
+    max-height: inherit;
+}
+
+.services #more-track-info {
+    clear: both;
+    margin-left: 5px;
+}
+.services #sync-audio-player {
+    width: 100%;
+}
 
 .home .container {
     background-image: url("/images/bkgnd_home.jpg");
