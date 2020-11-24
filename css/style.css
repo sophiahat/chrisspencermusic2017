@@ -78,13 +78,13 @@ ol, ul {
     margin: 5px;
     width: calc(100% - 0px);
     height: calc(30vw * 0.5625); /*16:9 aspect ratio*/
-/*    max-height: 190px;*/
+    max-height: 190px;
     min-height: 175px;
-    max-height: 200px;
     overflow: hidden;
+    text-align: center;
 }
 .services #track-image img {
-    width: inherit;
+    width: auto;
     max-height: inherit;
 }
 
@@ -98,6 +98,10 @@ ol, ul {
 
 .home .container {
     background-image: url("/images/bkgnd_home.jpg");
+}
+.home .video-container {
+    text-align: center;
+    margin-top: 15px;
 }
 
 .portfolio .container {
